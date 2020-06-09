@@ -1,0 +1,25 @@
+<div style="background-color: black; color: white; font-style: italic;">
+  <div style="color: white; font-size: larger; font: outline; padding: 1rem; text-align: center;">Details List Page</div>
+</div>
+<div class="container bg-dark border" style="text-align: center;">
+  <div class="row p-1 bg-warning border" style="color: black; font-size: medium; text-align: center; font-style: oblique;"><b>DETAILS OF ALL THE USERS HAVING THEIR BIRTHDAY TODAY</b>
+  <span class="offset-4"><a href="#" routerLink="/home"><b>HOME</b></a></span>
+  </div>
+  <div class="col-5 bg-light p-1" style="overflow-y: scroll; height: 300px; width: 800px;">
+    <div  *ngFor="let item of allusers" style="text-align: left;">
+      <hr>
+      <div><b>FirstName</b> : {{item.firstname}}</div>
+      <div><b>LastName</b> : {{item.lastname}}</div>
+      <button (click)="method(item.firstname)">Whole Details</button>
+      <div *ngIf="item2==item.firstname">
+        <div><b>Email</b> : {{item.email}}</div>
+        <div><b>Date Of Birth</b> : {{item.DOB}}</div>
+        <div><b>Status</b> : {{item.status}}</div>
+      </div>
+      <hr>
+      <hr>
+    </div>
+  </div>
+
+
+
